@@ -36,7 +36,7 @@ namespace lab07
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            drawFirst(100);
+            drawFirst(50);
         }
         public void drawFirst(int warunek)
         {
@@ -111,7 +111,7 @@ namespace lab07
             double s = 0;
             if(cmax != 0)
             {
-                s = (cmax - cmin) / cmax;
+                s = Math.Round((cmax - cmin) / cmax , 3);
             }           
             System.Drawing.Color color = System.Drawing.Color.FromArgb(r, g, b);
             float hue = color.GetHue();

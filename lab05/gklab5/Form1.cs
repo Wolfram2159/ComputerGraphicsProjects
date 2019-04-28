@@ -137,8 +137,6 @@ namespace gklab5
             foreach(LineSegment seg in lineSegArr)
             {
                 if (seg.isSegmentCrosses(straight)) {
-                    textBox3.Text = seg.getA().ToString();
-                    textBox4.Text = seg.getB().ToString();
                     i++;
                 }
             }
