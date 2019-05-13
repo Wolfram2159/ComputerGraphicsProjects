@@ -40,7 +40,7 @@ namespace lab07
         }
         public void drawFirst(int warunek)
         {
-            g.Clear(Color.White);
+            pictureBox1.Refresh();
             for (int i = 0; i <= warunek; i++)
             {
                 for (int j = 0; j <= warunek; j++)
@@ -67,7 +67,7 @@ namespace lab07
 
         private void button2_Click(object sender, EventArgs e)
         {
-            g.Clear(Color.White);
+            pictureBox1.Refresh();
             int red = trackBar1.Value;
             int green = trackBar2.Value;
             int blue = trackBar3.Value;          
@@ -80,7 +80,7 @@ namespace lab07
                     pen.Color = Color.FromArgb(red, green, blue);
                     g.DrawRectangle(pen, i, j, 1, 1);
                 }
-            }
+            }          
             makeVisible();
             calculateRGB(red, green, blue);
             calculateCMY(red, green, blue);
@@ -112,11 +112,8 @@ namespace lab07
             if(cmax != 0)
             {
                 s = Math.Round((cmax - cmin) / cmax , 3);
-            }           
-            System.Drawing.Color color = System.Drawing.Color.FromArgb(r, g, b);
-            float hue = color.GetHue();
-            float saturation = color.GetSaturation();
-            float lightness = color.GetBrightness();
+            }                      
+            float hue = System.Drawing.Color.FromArgb(r, g, b).GetHue();
             label13.Text = hue.ToString();
             label14.Text = s.ToString();
             label15.Text = cmax.ToString();
